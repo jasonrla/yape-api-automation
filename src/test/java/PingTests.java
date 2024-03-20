@@ -15,7 +15,6 @@ public class PingTests {
     }
     @Test
     public void testHealthCheck() {
-        // Prueba para comprobar el estado de salud de la API
         APIUtils.pingHealthCheck()
                 .then()
                 .statusCode(201);

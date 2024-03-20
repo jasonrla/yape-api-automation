@@ -6,10 +6,12 @@ import org.yape.utils.APIUtils;
 
 public class GetBookingTests extends BaseTest{
 
+    String schemaPath = "schemas/get_booking_id_schema.json";
+
     @Test
     public void testGetBookingById() {
         Response response = APIUtils.getBookingById(1);
-        response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("src/test/schemas/get_booking_id_schema.json"));
+        response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaPath));
         Assert.assertEquals(response.getStatusCode(), 200);
     }
 

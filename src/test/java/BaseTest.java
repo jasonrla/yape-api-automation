@@ -11,7 +11,6 @@ public class BaseTest {
     @BeforeClass
     public void setup() {
         RestAssured.baseURI = ConfigManager.getBaseURL();
-        System.out.printf("hola como estas");
         APIUtils.pingHealthCheck().then().statusCode(201);
     }
 }
