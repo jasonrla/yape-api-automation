@@ -1,5 +1,4 @@
 import com.google.gson.JsonObject;
-import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.response.Response;
 import org.testng.annotations.DataProvider;

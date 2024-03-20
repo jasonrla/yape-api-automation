@@ -84,8 +84,9 @@ public class APIUtils {
                 .patch("/booking/" + bookingId);
     }
 
-    public static Response deleteBooking(int bookingId) {
+    public static Response deleteBooking(int bookingId, String token) {
         return given()
+                .header("Cookie", "token=" + token)
                 .delete("/booking/" + bookingId);
     }
 

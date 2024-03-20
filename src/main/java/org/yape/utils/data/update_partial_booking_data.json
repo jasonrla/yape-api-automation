@@ -1,0 +1,103 @@
+{
+  "data_ok": {
+    "description": "All fields are valid",
+    "id": 1,
+    "token": "abc123",
+    "request": {
+      "firstname": "James",
+      "lastname": "Brown",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "expected_status": 200
+  },
+  "invalid_data_0": {
+    "description": "First name as number instead of string",
+    "id": 1,
+    "token": "abc123",
+    "request": {
+      "firstname" : 1212,
+      "lastname" : "Brown",
+      "totalprice" : 111,
+      "depositpaid" : true,
+      "bookingdates" : {
+        "checkin" : "2018-01-01",
+        "checkout" : "2019-01-01"
+      },
+      "additionalneeds" : "Breakfast"
+    },
+    "expected_status": 200
+  },
+  "invalid_data_1": {
+    "description": "Total price as string instead of integer",
+    "id": 1,
+    "token": "abc123",
+    "request": {
+      "firstname" : "John",
+      "lastname" : "Brown",
+      "totalprice" : "111",
+      "depositpaid" : true,
+      "bookingdates" : {
+        "checkin" : "2018-01-01",
+        "checkout" : "2019-01-01"
+      },
+      "additionalneeds" : "Breakfast"
+    },
+    "expected_status": 200
+  },
+  "invalid_data_2": {
+    "description": "Checkin and checkout dates in different format",
+    "id": 1,
+    "token": "abc123",
+    "request": {
+      "firstname" : "John",
+      "lastname" : "Brown",
+      "totalprice" : "111",
+      "depositpaid" : true,
+      "bookingdates" : {
+        "checkin" : "20180101",
+        "checkout" : "20190101"
+      },
+      "additionalneeds" : "Breakfast"
+    },
+    "expected_status": 200
+  },
+  "existing_data": {
+    "description": "All fields are valid but already exists",
+    "id": 1,
+    "token": "abc123",
+    "request": {
+      "firstname": "James",
+      "lastname": "Brown",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "expected_status": 200
+  },
+  "invalid_data_3": {
+    "description": "No first name",
+    "id": 1,
+    "token": "abc123",
+    "request": {
+      "lastname": "Brown",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "expected_status": 200
+  }
+}
