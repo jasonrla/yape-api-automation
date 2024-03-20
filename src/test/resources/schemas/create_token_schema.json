@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "required": ["token"]
+    },
+    {
+      "properties": {
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": ["reason"]
+    }
+  ]
+}

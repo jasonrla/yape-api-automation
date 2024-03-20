@@ -1,0 +1,1 @@
+{"uuid":"601d7edf-d165-421c-b01a-06e1cf4bbf07","name":"PingTests","children":["756644b4-54e3-47d3-b0b9-486e455a0d21"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1710905427367,"stop":1710905427929}],"afters":[],"links":[],"start":1710905421977,"stop":1710905434579}
