@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static io.restassured.RestAssured.given;
-
 public class UpdatePartialBookingTests extends BaseTest{
     private String token;
 
@@ -37,13 +35,9 @@ public class UpdatePartialBookingTests extends BaseTest{
 
     @Test(dataProvider = "updatePartialBookingData")
     public void testUpdatePartialBooking(JsonObject request, int id, int expectedStatus) {
-        given()
-                .header("Content-Type", "application/json")
-                .header("Accept", "application/json")
-                .header("Cookie", "token=" + token)
-                .body(request.toString())
-                .when()
-                .patch("https://restful-booker.herokuapp.com/booking/" + id)
+        String firstname = request.get("firstname").getAsString();
+        String lastname = request.get("lastname").getAsString();
+        APIUtils.partialUpdateBooking(id, firstname, lastname, token)
                 .then()
                 .statusCode(expectedStatus);
     }

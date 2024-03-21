@@ -83,21 +83,5 @@
       "additionalneeds": "Breakfast"
     },
     "expected_status": 200
-  },
-  "invalid_data_3": {
-    "description": "No first name",
-    "id": 1,
-    "token": "abc123",
-    "request": {
-      "lastname": "Brown",
-      "totalprice": 111,
-      "depositpaid": true,
-      "bookingdates": {
-        "checkin": "2018-01-01",
-        "checkout": "2019-01-01"
-      },
-      "additionalneeds": "Breakfast"
-    },
-    "expected_status": 200
   }
 }

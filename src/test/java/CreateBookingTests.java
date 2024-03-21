@@ -1,5 +1,4 @@
 import com.google.gson.JsonObject;
-import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.ValidatableResponse;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class CreateBooking extends BaseTest{
+public class CreateBookingTests extends BaseTest{
 
     @DataProvider(name = "bookingData")
     public Iterator<Object[]> bookingDataProvider() {
@@ -30,5 +29,13 @@ public class CreateBooking extends BaseTest{
         ValidatableResponse response = APIUtils.createBooking(request)
                 .then()
                 .statusCode(expectedStatus);
+    }
+
+    @Test(dataProvider = "bookingData")
+    public void testCreateBookingWithInvalidData(JsonObject request, int expectedStatus) {
+        JsonObject invalidRequest = new JsonObject();
+        ValidatableResponse response = APIUtils.createBooking(invalidRequest)
+                .then()
+                .statusCode(500);
     }
 }

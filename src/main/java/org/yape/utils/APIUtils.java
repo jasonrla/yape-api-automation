@@ -1,6 +1,5 @@
 package org.yape.utils;
 
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import com.google.gson.JsonObject;
@@ -73,13 +72,14 @@ public class APIUtils {
                 .put("/booking/" + id);
     }
 
-    public static Response partialUpdateBooking(int bookingId, String firstname, String lastname) {
+    public static Response partialUpdateBooking(int bookingId, String firstname, String lastname, String token) {
         JsonObject bookingDetails = new JsonObject();
         bookingDetails.addProperty("firstname", firstname);
         bookingDetails.addProperty("lastname", lastname);
 
         return given()
                 .contentType("application/json")
+                .header("Cookie", "token=" + token)
                 .body(bookingDetails.toString())
                 .patch("/booking/" + bookingId);
     }

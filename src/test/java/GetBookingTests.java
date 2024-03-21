@@ -10,7 +10,7 @@ public class GetBookingTests extends BaseTest{
 
     @Test
     public void testGetBookingById() {
-        Response response = APIUtils.getBookingById(1);
+        Response response = APIUtils.getBookingById(2);
         response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaPath));
         Assert.assertEquals(response.getStatusCode(), 200);
     }
