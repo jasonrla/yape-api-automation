@@ -27,7 +27,7 @@ mvn test
 ```
 ## Demostración
 
-Para ver una demostración de cómo se ejecutan las pruebas, puedes ver el siguiente video: [Enlace al video](https://drive.google.com/file/d/1kqlchtSO2kH5ginwrF34N-BZaN5ns57d/view?usp=sharing).
+Para ver una demostración de cómo se ejecutan las pruebas, puedes ver el siguiente video: [Enlace al video](https://drive.google.com/file/d/13Iecj9Zek9dJ6ZOYhkqt2Tl81-qMdRwt/view?usp=sharing).
 
 ## Pipeline de CI/CD
 El proyecto incluye un pipeline de CI que ejecuta automáticamente las pruebas cada vez que se realizan cambios en el repositorio. La configuración de este pipeline se encuentra en el directorio `.github/workflows`.
